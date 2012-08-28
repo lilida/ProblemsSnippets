@@ -1,4 +1,4 @@
-package ProblemsSnippets.ProblemsSnippets;
+package ProblemsSnippets.Heap;
 
 /**
  * Implement a Max Heap per CLRS

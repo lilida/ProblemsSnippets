@@ -1,5 +1,7 @@
-package ProblemsSnippets.ProblemsSnippets;
+package ProblemsSnippets.Heap;
 
+
+import ProblemsSnippets.Heap.MaxHeap;
 
 public class MaxHeapTest extends junit.framework.TestCase {
     public void testMaxHeapify() throws Exception {
