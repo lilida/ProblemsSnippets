@@ -2,15 +2,24 @@ package ProblemsSnippets.LinkedLists;
 
 import junit.framework.TestCase;
 
-/**
- * Created with IntelliJ IDEA.
- * User: lidali
- * Date: 8/28/12
- * Time: 12:45 AM
- * To change this template use File | Settings | File Templates.
- */
 public class CycleDetectionTest extends TestCase {
     public void testGetCycleNode() throws Exception {
 
+        LinkedListNode n1=null;
+
+        assertNull(CycleDetection.GetCycleNode(n1));
+        n1=new LinkedListNode();
+
+        assertNull(CycleDetection.GetCycleNode(n1));
+        n1.next=n1;
+        assertEquals(CycleDetection.GetCycleNode(n1),n1);
+
+        n1.next=new LinkedListNode();
+        assertNull(CycleDetection.GetCycleNode(n1));
+        n1.next.next=new LinkedListNode();
+        n1.next.next.next=n1;
+        assertEquals(CycleDetection.GetCycleNode(n1),n1);
+        n1.next.next.next=n1.next;
+        assertEquals(CycleDetection.GetCycleNode(n1),n1.next);
     }
 }

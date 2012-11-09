@@ -1,11 +1,36 @@
 package ProblemsSnippets.LinkedLists;
 
-/**
- * Created with IntelliJ IDEA.
- * User: lidali
- * Date: 8/28/12
- * Time: 12:40 AM
- * To change this template use File | Settings | File Templates.
- */
 public class CycleDetection {
+
+    /**
+     * If there is a cycle,  return the start node
+     * If there is no cycle, return null
+     * @param head
+     * @return
+     */
+    public static  LinkedListNode GetCycleNode(LinkedListNode head){
+        if (head==null || head.next ==null)
+            return null;
+        LinkedListNode p1=head;
+        LinkedListNode p2=head;
+
+        p1=p1.next;
+        p2=p2.next == null ? null : p2.next.next;
+
+        while (p2!=null && p1!=p2){
+            p1=p1.next;
+            p2=p2.next == null ? null : p2.next.next;
+        }
+
+        if (p2==null)
+            return null;
+        p1=head;
+        while (p1!=p2){
+            p1=p1.next;
+            p2=p2.next;
+        }
+        return p1;
+
+
+    }
 }
